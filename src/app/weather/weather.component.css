@@ -1,0 +1,82 @@
+.container {
+    margin: 10px;
+}
+
+.btn-primary {
+    margin-top: 2px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+    .card-body h3 {
+        margin-top: 0;
+    }
+
+    .card-body h4 {
+        margin-bottom: 10px;
+    }
+
+    .card-body p {
+        margin-bottom: 10px;
+    }
+
+    .card-body a {
+        color: blue;
+        text-decoration: none;
+    }
+
+        .card-body a:hover {
+            text-decoration: underline;
+        }
+
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.8em;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+/* Weather Icon Style */
+.weather-icon {
+    width: 110px; /* Adjust the size as needed */
+    /*margin-left: auto;*/ /* Move the icon to the right */
+    margin-right: 100px;
+    display: block; /* Ensure the icon is displayed as a block element */
+}
+
+/* Cancel Button (X) Style */
+.close {
+    position: relative;
+    top: -10px;
+    right: -10px;
+    color: #000;
+    opacity: 0.5;
+}
+
+    .close:hover {
+        color: #ff0000;
+        opacity: 1;
+    }
+

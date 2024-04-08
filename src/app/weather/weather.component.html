@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Add a Location</h2>
+    <div class="form-group">
+        <form [formGroup]="formGrp">
+            <label for="zipCode">Enter Zip Code:</label>
+            <input type="text" id="zipCode" class="form-control" formControlName="zipCode" placeholder="E.g., 12345">
+            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="text-danger">
+                <div *ngIf="zipCode.errors.required">
+                    Zip code is required.
+                </div>
+                <div *ngIf="zipCode.errors.pattern">
+                    Zip code must be 5 digits.
+                </div>
+            </div>
+        </form>
+    </div>
+    <button class="btn btn-primary" (click)="addZipcode()" [disabled]="!formGrp.valid">Add Location</button>
+    <br />
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+</div>
+<br />
+<div class="container mt-4">
+    <div *ngFor="let location of weatherData" class="card">
+        <div class="card-body">
+            <!-- Cancel Button (X) -->
+            <button type="button" class="close" aria-label="Close" (click)="removeLocation(location)">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>{{ location.name }} ({{ location.id }})</h3>
+                    <h4>Current conditions: {{ location.weather[0].main }}</h4>
+                    <h4>Temperatures today:</h4>
+                    <p>
+                        Current {{ location.main.temp | number: '1.0-0' }} - Max {{ location.main.temp_max | number: '1.0-0' }} - Min {{ location.main.temp_min | number: '1.0-0' }}
+                    </p>
+                    <p>
+                        <a [routerLink]="['/forecast', location.zipCode]">Show 5-day forecast for {{ location.name }}</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <!-- Weather Icon -->
+                    <img class="weather-icon" [src]="getWeatherIconUrl(location.weather[0].main | lowercase)" alt="Weather Icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

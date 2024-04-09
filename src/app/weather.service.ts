@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { StorageService } from './storage.service';
+import { WeatherData } from './models/weather-data.model';
 
 @Injectable({
     providedIn: 'root'

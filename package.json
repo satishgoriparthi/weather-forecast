@@ -28,13 +28,13 @@
     "e2e": "ng e2e"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~16.x",
+    "@angular-devkit/build-angular": "~13.x",
     "@angular/cli": "~13.x",
     "@angular/compiler-cli": "~13.x",
     "@angular/language-service": "~13.x",
-    "@types/node": "^12.20.38",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.20.38",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { WeatherData } from '../models/weather-data.model';
 
 @Component({
     selector: 'app-weather',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class WeatherComponent implements OnInit {
     errorMessage: string = ''; // Initialize errorMessage variable
-    weatherData: any[] = []; // This array will store the weather data for each zip code
+    weatherData: WeatherData[] = []; // Define the type according to the data structure from the API
     formGrp: FormGroup;
     zipCode: FormControl = new FormControl('', Validators.required)
 
@@ -43,7 +44,7 @@ export class WeatherComponent implements OnInit {
         });
     }
 
-    removeLocation(location: any): void {
+    removeLocation(location: WeatherData): void {
         const index = this.weatherData.indexOf(location);
         if (index !== -1) {
             this.weatherData.splice(index, 1);
